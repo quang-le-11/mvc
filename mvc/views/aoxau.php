@@ -15,6 +15,5 @@
     <div class="content">
         <?php require_once "./mvc/views/pages/". $data["page"].".php" ?>
     </div>
-   <div class="footer"> </div>
 </body>
 </html>

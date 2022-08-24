@@ -1,16 +1,23 @@
 <?php
 class Home extends Controller {
     function SayHi() {
+        //MOdel
         $teo = $this->model("StudentsModel");
         echo $teo->GetStudent();
     }
 
     function Show($a, $b) {
-        $teo = $this->model("StudentsModel");
 
+        //Model
+        $teo = $this->model("StudentsModel");
         $tong = $teo->sum($a, $b);
 
-        $this->view("aodep", ["number" => $tong]);
+        //View
+        $this->view("aoxau", [
+            "page" => "contact",
+            "number" => $tong,
+            "Mau" => "red"
+        ]);
     }
 }
 ?>
