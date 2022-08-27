@@ -13,11 +13,15 @@ class App
          $arr = $this->UrlProcess();
 
         // //Process Controller
-        if (file_exists("./mvc/controllers/". $arr[0] .".php"))
+        if(!is_null($arr))
         {
-            $this->controller = $arr[0];
-            unset($arr[0]);
+            if (file_exists("./mvc/controllers/". $arr[0] .".php"))
+            {
+                $this->controller = $arr[0];
+                unset($arr[0]);
+            }
         }
+      
         require_once "./mvc/controllers/". $this->controller .".php";
         $this->controller = new $this->controller;
 

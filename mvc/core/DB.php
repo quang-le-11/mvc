@@ -4,7 +4,7 @@ class DB {
     protected $servername = "localhost";
     protected $username = "root";
     protected $password = "";
-    protected $dbname = "mvc";
+    protected $dbname = "booksh";
 
     function __construct()
     {
