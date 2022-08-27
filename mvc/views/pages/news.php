@@ -1,1 +1,12 @@
-<h2>Nes Pay</h2>
+<h2>
+<?php
+    echo $data["number"];
+?>
+</h2>
+
+<?php 
+while($row = mysqli_fetch_array($data["student"]))
+{
+    echo $row["hoten"];
+}
+?>

@@ -13,10 +13,11 @@ class Home extends Controller {
         $tong = $teo->sum($a, $b);
 
         //View
-        $this->view("aoxau", [
-            "page" => "contact",
+        $this->view("aodep", [
+            "page" => "news",
             "number" => $tong,
-            "Mau" => "red"
+            "Mau" => "red",
+            "student" => $teo->Student()
         ]);
     }
 }
