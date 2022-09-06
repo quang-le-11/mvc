@@ -1,6 +1,13 @@
 <?php
 class Register extends Controller 
 {
+    public $UserModel;
+
+    public function __construct()
+    {
+        $this->UserModel = $this->model("UserModel");
+    }
+
     public function SayHi()
     {
         $this->view("master2", []);
@@ -8,6 +15,7 @@ class Register extends Controller
 
     public function proccessRegister()
     {
+        //Lay du lieu khi sibmit form
          $fullname;
          $username;
          $passpord;
@@ -17,15 +25,22 @@ class Register extends Controller
        {
         $fullname = $_POST['fullname'];
         $username = $_POST['username'];
-        $passpord = $_POST['password'];
+        $password = $_POST['password'];
+        $password = password_hash($password, PASSWORD_DEFAULT);
         $email = $_POST['email'];
         $address = $_POST['address'];
        }
-       echo $fullname . '<br>';
-       echo $username . '<br>';
-       echo $passpord . '<br>';
-       echo $email . '<br>';
-       echo $address . '<br>';
+    
+       //luu du lieu vao database
+       $result = $this->UserModel->InsertNewUser($username, $password, $fullname, $email, $address);
+       
+       //thong bao trinh duyet Oke/fail
+
+       echo $result;
+
+    //    $this->view("master2", [
+    //         "result" => $result
+    //    ]);
     }
 
 
