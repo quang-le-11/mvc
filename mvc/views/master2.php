@@ -35,19 +35,19 @@
             <div class="form-group mb-3">
               <label class="form-label">Gioi tinh</label>
               <div class="form-check">
-                <input class="form-check-input" type="radio" name="gender" >
+                <input class="form-check-input" type="radio" name="gender" value="male">
                 <label class="form-check-label">
                 Nam
                 </label>
               </div>
               <div class="form-check">
-                <input class="form-check-input" type="radio" name="gender">
+                <input class="form-check-input" type="radio" name="gender" value="female">
                 <label class="form-check-label" >
                 Nu
                 </label>
               </div>
               <div class="form-check">
-                <input class="form-check-input" type="radio" name="gender">
+                <input class="form-check-input" type="radio" name="gender" value="orther">
                 <label class="form-check-label" >
                  Khac
                 </label>
@@ -100,6 +100,6 @@
       }
     });
   </script>
- 
+
 </body>
 </html>
